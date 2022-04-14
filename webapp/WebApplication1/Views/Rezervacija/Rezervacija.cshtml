@@ -1,0 +1,28 @@
+﻿
+
+
+
+<div class="row" style="background-image: url(images/menu_2.jpg);">
+
+    <div class="col-lg-3 bg-image"></div>
+    <div class="col-lg-6 p-5" style="background: rgba(119,136,153, 0.2);">
+        <div id="rezervacijaPlaceholder">ghhg</div>
+
+    </div>
+    <div class="col-lg-3 bg-image"></div>
+
+</div>
+<script src="~/js/jquery.min.js"></script>
+<script>
+
+    $(function () {
+        $.get("/Rezervacija/RezervacijaPartial", function (data) {
+            $("#rezervacijaPlaceholder").html(data)
+        })
+    })
+
+
+
+
+
+</script>

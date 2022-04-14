@@ -1,0 +1,10 @@
+<div class="d-flex  flex-column justify-content-center align-items-center">
+  <div class="form" class="form-group w-50 h-50 border mt-5 p-5">
+    <label for="">Username korisnika</label>
+    <input type="text" class="form-control " [(ngModel)]="username">
+    <label for="">Lozinka korisnika</label>
+    <input type="password" class="form-control " [(ngModel)]="password">
+    <input type="button" class="btn btn-dark mt-5" value="Logiraj se" (click)="login()">
+  </div>
+  <input type="button" class="btn btn-dark mt-5" value="Registriraj se" routerLink="/Registracija">
+</div>

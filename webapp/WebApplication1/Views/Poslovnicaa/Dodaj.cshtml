@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using ClassLibrary1.ViewModels;
+@using ClassLibrary1.Models;
+
+@model WebApplication1.Models.DodajPoslovnicu
+
+@using WebApplication1.Helper
+@{
+    User aktivan = Autenfikacija.GetLogiraniKorisnik(Context); }
+
+<div> Dodaj poslovnicu</div>
+
+<form id="poslovnicaForm" asp-controller="Poslovnicaa" asp-action="Spasi" method="post">
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Naziv">Naziv poslovnice</label>
+            <input type="text" class="form-control" asp-for="Naziv">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Adresa">Adresa poslovnice</label>
+            <input type="text" class="form-control" asp-for="Adresa">
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Spasi" data-save="modal">
+        </div>
+    </div>
+
+</form>

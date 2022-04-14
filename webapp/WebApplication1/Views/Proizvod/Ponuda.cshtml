@@ -1,0 +1,61 @@
+﻿
+@using ClassLibrary1.ViewModels;
+
+@{
+    Layout = "_Layout";
+    var proizvodi= (List<ProizvodVM>)ViewData["ProizvodKljuc"];
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
+
+
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center mb-5 ftco-animate">
+                
+                <h2 class="display-4">Naša ponuda</h2>
+                
+            </div>
+            <div class="col-md-12">
+                <div class="owl-carousel ftco-owl">
+                    @foreach (var proizvod in proizvodi)
+                    {
+                        <div class="item">
+                            <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
+                                <img src="/images/@proizvod.nazivSlike" alt="Free Template by Free-Template.co" class="img-fluid">
+                                <div class="media-body p-md-5 p-4">
+                                    <h5 class="text-primary">@proizvod.cijenaProizvoda KM</h5>
+                                    <h5 class="mt-0 h4">@proizvod.nazivProizvoda</h5>
+                                    <p class="mb-4">@proizvod.opisProizvoda.</p>
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- END section -->
+
+
+</body>
+</html>

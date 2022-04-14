@@ -1,0 +1,100 @@
+﻿
+
+@model ClassLibrary1.ViewModels.RezervacijaVM
+
+
+
+
+
+<h1 class="mb-4 text-center">Rezervacija</h1>
+<form id="rezForma" asp-controller="Rezervacija" asp-action="DodajRezervacija" method="post">
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="poslovnice">Odabir poslovnice</label>
+            <select asp-for="PoslovnicaID" asp-items="Model.poslovnice" class="form-control ">
+                <option selected disabled>Odabir poslovnice</option>
+
+            </select>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="Ime">Ime</label>
+            <input type="text" class="form-control" asp-for="Ime">
+
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="Prezime">Prezime</label>
+            <input type="text" class="form-control" asp-for="Prezime">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Email">Email</label>
+            <input type="email" class="form-control" asp-for="Email">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="brojOsoba">Broj osoba</label>
+            <select asp-for="brojOsobaID" asp-items="Model.brojOsoba" class="form-control">
+                <option selected disabled>Odabir</option>
+
+            </select>
+
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="BrojTelefona">Telefon</label>
+            <input type="text" class="form-control" asp-for="BrojTelefona">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="DatumRezervacije">Datum rezervacije</label>
+            <input type="date" class="form-control" asp-for="DatumRezervacije" onkeypress="return false;">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="TerminRezervacije">Termin</label>
+            <select asp-for="TerminRezervacijeID" asp-items="Model.TerminRezervacije" class="form-control">
+                <option selected disabled>Termin</option>
+
+            </select>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Napomena">Message</label>
+            <textarea class="form-control" asp-for="Napomena" cols="30" rows="7"></textarea>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Rezerviraj" data-save="modal">
+        </div>
+    </div>
+
+</form>
+
+
+
+<script src="~/js/Validacija/rezervacija.js"></script>
+
+
+
+
+
+

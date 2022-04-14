@@ -1,0 +1,73 @@
+﻿
+@using ClassLibrary1.ViewModels;
+@using ClassLibrary1.Models;
+@using WebApplication1.Helper
+@{ 
+
+    var komentari = (List<KomentarVM>)ViewData["komentariVD"];
+    User aktivan = Autenfikacija.GetLogiraniKorisnik(Context);
+
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
+
+
+
+
+
+    <div class="container">
+        
+
+        <div class="row">
+            <div class="col-md-12 text-center mb-5 ftco-animate" id="unosKomentarPlaceholder">
+
+
+                @{ if (aktivan != null)
+                    {
+                        <button class="display-4" style="border:none; color:orangered; background-color:white " ajax-poziv="da" ajax-rezultat="unosKomentarPlaceholder" ajax-url="@Url.Action("Dodaj", "Komentar")">dodaj komentar</button>
+                    }
+                    else
+                    {
+            <button type="button" class="display-4" style="border:none; color:orangered; background-color:white " ajax-modalni="da" ajax-rezultat="PrijavaPlaceholder" ajax-url="@Url.Action("Index", "Prijava")"> dodaj komentar</button>
+                    }
+                }
+            </div>
+
+
+        </div>
+
+
+        @foreach (var x in komentari)
+        {
+            <div class="row">
+                <div class="col-md-12 text-center mb-5 ftco-animate">
+
+                    <h2 class="display-4">@x.Username</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-md-7">
+                            <p class="lead">@x.Sadrzaj</p>
+                        </div>
+                    </div>
+                    <h4 class="ftco-sub-title">@x.vrijemePostavljanja</h4>
+                </div>
+
+
+            </div>
+        }
+
+
+    </div>
+
+    
+
+
+    <!-- END section -->
+
+</body>
+</html>

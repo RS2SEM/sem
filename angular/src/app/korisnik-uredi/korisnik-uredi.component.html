@@ -1,0 +1,14 @@
+<div class="container-fluid d-flex justify-content-center align-items-center flex-column mt-5">
+  <h1 class="fw-bold">Uredi korisnika</h1>
+  <form class="form-group w-25 d-flex flex-column justify-content-center align-items-center mt-5" action="">
+    <label for="" class="fw-bold">Ime</label>
+    <input class="form-control" name="ime" type="text" [(ngModel)]="korisnik.ime">
+    <label for="" class="fw-bold">Prezime</label>
+    <input class="form-control" type="text" name="prezime" [(ngModel)]="korisnik.prezime">
+    <label for="" class="fw-bold">Broj telefona</label>
+    <input class="form-control" type="text" name="brojTelefona" [(ngModel)]="korisnik.brojTelefona">
+    <label for="" class="fw-bold">Adresa stanovanja</label>
+    <input class="form-control" type="text" name="adresaStanovanja" [(ngModel)]="korisnik.adresaStanovanja">
+    <button class="btn btn-dark mt-4 fw-bold" (click)="spremi()">Spremi promjene</button>
+  </form>
+</div>

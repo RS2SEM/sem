@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ClassLibrary1.ViewModels.PonudaPregled
+
+    <form asp-controller="PosebnaPonuda" asp-action="Pregled">
+        <p>
+            Pretražite posbna jela: <input type="text" name="q" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naziv akcijske ponude</th>
+            <th>Opis</th>
+            <th>Akcijska cijena</th>
+            <th>Akcija</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Listt)
+        {
+            <tr>
+                <td>@row.nazivProizvoda</td>
+                <td>@row.opisProizvoda</td>
+                <td>@row.cijenaProizvoda</td>
+
+                <td> <a asp-controller="PosebnaPonuda" asp-action="Dodaj" asp-route-id="null">Dodaj</a></td>
+                <td> <a asp-controller="PosebnaPonuda" asp-action="Uredi" asp-route-id="@row.ProizvodID">Uredi</a></td>
+                <td> <a asp-controller="PosebnaPonuda" asp-action="Izbrisi" asp-route-id="@row.ProizvodID">Izbrisi</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

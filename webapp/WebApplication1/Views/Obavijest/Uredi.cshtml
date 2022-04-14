@@ -1,0 +1,46 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model ClassLibrary1.Models.Obavijest
+  
+
+
+
+    <div> Uredi obavijest</div>
+    <form id="obavjestFormm" asp-controller="Obavijest" asp-action="SpasiUredi" method="post">
+        @Html.HiddenFor(model => model.ObavijestID);
+        @Html.AntiForgeryToken()
+        <div class="editor-label">
+            <div class="col-md-12 form-group">
+                @Html.LabelFor(model => model.Sadrzaj, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Sadrzaj, new { htmlAttributes = new { @class = "form-control" } })        
+            </div>
+        </div>
+
+        <div class="editor-label">
+            <div class="col-md-12 form-group">
+                @Html.LabelFor(model => model.Naslov, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Naslov, new { htmlAttributes = new { @class = "form-control" } })            
+            </div>
+        </div>
+        <div class="editor-label">
+            <div class="col-md-12 form-group">
+                @Html.LabelFor(model => model.VrijemeObjave, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.VrijemeObjave, new { htmlAttributes = new { @class = "form-control" } })              
+            </div>
+        </div>
+
+        
+
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Spasi" data-save="modal">
+            </div>
+        </div>
+
+    </form>

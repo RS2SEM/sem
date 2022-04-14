@@ -1,0 +1,43 @@
+﻿@using ClassLibrary1.ViewModels;
+@using ClassLibrary1.Models;
+@using WebApplication1.Helper
+@{
+    Layout = "_Layout";
+    var obavijesti = (List<ObavijestDodaj>)ViewData["obavijestiKljuc"];
+    User aktivan = Autenfikacija.GetLogiraniKorisnik(Context);
+}
+
+@model WebApplication1.Models.DodajObavijest
+
+<div> Dodaj obavijest</div>
+
+<form id="obavjestForm" asp-controller="Obavijest" asp-action="Spasi" method="post">
+ 
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Sadrzaj">Sadrzaj</label>
+            <input type="text" class="form-control" asp-for="Sadrzaj">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Naslov">Naslov</label>
+            <input type="text" class="form-control" asp-for="Naslov">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Vrijeme">Vrijeme</label>
+            <input type="date" class="form-control" asp-for="Vrijeme">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Spasi" data-save="modal">
+        </div>
+    </div>
+
+</form>

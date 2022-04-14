@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model ClassLibrary1.ViewModels.ObavijestPregled
+
+    <form asp-controller="Obavijest" asp-action="Pregled">
+        <p>
+            Pretražite obavijesti: <input type="text" name="q" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Naslov</th>
+            <th>Sadrzaj</th>
+            <th>Datum</th>
+            <th>Akcija</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var row in Model.Listt)
+            {
+        <tr>
+            <td>@row.NazivObavijesti</td>
+            <td>@row.SadrZajObavijesti</td>
+            <td>@row.datum</td>
+            <td> <a asp-controller="Obavijest" asp-action="Dodaj" asp-route-id="null">Dodaj</a></td>
+            <td> <a asp-controller="Obavijest" asp-action="Uredi" asp-route-id="@row.ObavijestID">Uredi</a></td>
+            <td> <a asp-controller="Obavijest" asp-action="Izbrisi" asp-route-id="@row.ObavijestID">Izbrisi</a></td>
+        </tr>
+            }
+    </tbody>
+</table>

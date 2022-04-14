@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using ClassLibrary1.ViewModels;
+@using ClassLibrary1.Models;
+@model ClassLibrary1.ViewModels.KomnPregled
+
+@using WebApplication1.Helper
+@{ 
+    User aktivan = Autenfikacija.GetLogiraniKorisnik(Context); }
+
+@{ if (aktivan != null)
+    {
+<button class="display-4" style="border:none; color:orangered; background-color:white " ajax-poziv="da" ajax-rezultat="unosKomentarPlaceholder" ajax-url="@Url.Action("Dodaj", "Komentar")"></button> }
+            else
+            {
+<button type="button" class="display-4" style="border:none; color:orangered; background-color:white " ajax-modalni="da" ajax-rezultat="PrijavaPlaceholder" ajax-url="@Url.Action("IndexAdmin", "Prijava")"></button> } }
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Sadrzaj</th>
+            <th>Datum</th>
+            <th>Akcija</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Listt)
+        {
+            <tr>
+                <td>@row.Sadrzaj</td>
+
+                <td>@row.vrijemePostavljanja</td>
+                <td> <a asp-controller="Komentar" asp-action="Dodaj" asp-route-id="null">Odgovori</a></td>
+                @*<td> <a asp-controller="Komentar" asp-action="Uredi" asp-route-id="@row.KomentarID">Uredi</a></td>*@
+                <td> <a asp-controller="Komentar" asp-action="Izbrisi" asp-route-id="@row.KomentarID">Izbrisi</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

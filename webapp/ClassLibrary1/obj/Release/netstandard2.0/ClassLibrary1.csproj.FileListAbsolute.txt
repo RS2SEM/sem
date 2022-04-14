@@ -1,0 +1,10 @@
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\bin\Release\netstandard2.0\ClassLibrary1.deps.json
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\bin\Release\netstandard2.0\ClassLibrary1.dll
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\bin\Release\netstandard2.0\ClassLibrary1.pdb
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\obj\Release\netstandard2.0\ClassLibrary1.csproj.AssemblyReference.cache
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\obj\Release\netstandard2.0\ClassLibrary1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\obj\Release\netstandard2.0\ClassLibrary1.AssemblyInfoInputs.cache
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\obj\Release\netstandard2.0\ClassLibrary1.AssemblyInfo.cs
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\obj\Release\netstandard2.0\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\obj\Release\netstandard2.0\ClassLibrary1.dll
+C:\Users\pc\Desktop\rapsudic\webapp\ClassLibrary1\obj\Release\netstandard2.0\ClassLibrary1.pdb

@@ -1,0 +1,25 @@
+<div class="container mt-5 justify-content-center align-items-center">
+  <h1 class="fw-bold">Pregled liste korisnika</h1>
+  <table class="table table-dark w-100 mt-5">
+    <tr class="bg-dark">
+      <th>ID</th>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Broj telefona</th>
+      <th>Adresa stanovanja</th>
+      <th>Akcija</th>
+    </tr>
+    <tbody>
+    <tr class="fw-lighter" *ngFor="let k of getKorisniciPodaci()">
+      <td>{{k.userID}}</td>
+      <td>{{k.ime}}</td>
+      <td>{{k.prezime}}</td>
+      <td>{{k.brojTelefona}}</td>
+      <td>{{k.adresaStanovanja}}</td>
+      <td>
+        <button class="btn btn-light" (click)="uredi(k)">Uredi</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model WebApplication1.Models.DodajJelovnik
+
+<div> Dodaj posebnu ponudu</div>
+<br />
+<form id="ponudaForm" asp-controller="PosebnaPonuda" asp-action="Spasi" method="post">
+    <div class="row">
+        <div class="col-md-11 form-group" >
+            <label asp-for="Naziv" style="color:black">Naziv ponude</label>
+            <input type="text" class="form-control" asp-for="Naziv" style="border:dashed red">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-11 form-group">
+            <label asp-for="Opis" style="color:black">Opis :</label>
+            <input type="text" class="form-control" asp-for="Opis" style="border:dashed red">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 form-group">
+            <label asp-for="Cijena" style="color:black">Akcijska cijena </label>
+            <input type="number" class="form-control" asp-for="Cijena" style="border:dashed red">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-11 form-group">
+            <label asp-for="TipProizvodaId" style="color:black">Tip proizvoda(dorucak-1,rucak-2,vecera-3)</label>
+            <input type="number" class="form-control" asp-for="TipProizvodaId" style="border:dashed red">
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-11 form-group">
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Spasi" data-save="modal">
+        </div>
+    </div>
+
+</form>

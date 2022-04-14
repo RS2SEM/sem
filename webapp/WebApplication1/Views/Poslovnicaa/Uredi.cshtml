@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model ClassLibrary1.Models.Poslovnica
+
+
+
+
+<div> Uredi Poslovnice</div>
+<form id="poslovnicaFormm" asp-controller="Poslovnicaa" asp-action="SpasiUredi" method="post">
+    @Html.HiddenFor(model => model.PoslovnicaID);
+    @Html.AntiForgeryToken()
+    <div class="editor-label">
+        <div class="col-md-12 form-group">
+            @Html.LabelFor(model => model.Naziv, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Naziv, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+
+    <div class="editor-label">
+        <div class="col-md-12 form-group">
+            @Html.LabelFor(model => model.Adresa, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.EditorFor(model => model.Adresa, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+    </div>
+    
+
+
+
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Spasi" data-save="modal">
+        </div>
+    </div>
+
+</form>

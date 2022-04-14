@@ -1,0 +1,97 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using ClassLibrary1.ViewModels;
+@using ClassLibrary1.Models;
+@using WebApplication1.Helper
+@*@{
+        Layout = "_Layout";
+        var obavijesti = (List<ObavijestDodaj>)ViewData["obavijestiKljuc"];
+        User aktivan = Autenfikacija.GetLogiraniKorisnik(Context);
+    }*@
+
+@model WebApplication1.Models.DodajRezervaciju
+
+<div> Dodaj rezervaciju</div>
+@Html.AntiForgeryToken();
+<form id="rezervacijaForm" asp-controller="Rezervacija" asp-action="Spasi" method="post">
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="Ime">Ime</label>
+            <input type="text" class="form-control" asp-for="Ime">
+
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="Prezime">Prezime</label>
+            <input type="text" class="form-control" asp-for="Prezime">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="BrojTelefona">kontakt broj</label>
+            <input type="text" class="form-control" asp-for="BrojTelefona">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Email">Email</label>
+            <input type="email" class="form-control" asp-for="Email">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="brojOsobaID">Broj osoba(1-16)</label>
+            <input type="number" class="form-control" asp-for="brojOsobaID" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="Datum">Datum rezervacije</label>
+            <input type="date" class="form-control" asp-for="Datum" onkeypress="return false;">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="VrijemeRezervacije"> Vrijeme Rezervacije</label>
+            <input type="date" class="form-control" asp-for="VrijemeRezervacije">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Napomena">Message</label>
+            <textarea class="form-control" asp-for="Napomena" cols="30" rows="7"></textarea>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="PoslovnicaId">Odabir poslovnice(Mostar,Sarajevo,Vitez)</label>
+            <input type="number" class="form-control" asp-for="PoslovnicaId">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="TerminRezervacijaId">Termin</label>
+            <input type="number" class="form-control" asp-for="TerminRezervacijaId">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Spasi" data-save="modal">
+        </div>
+    </div>
+    <br />
+
+
+</form>
+

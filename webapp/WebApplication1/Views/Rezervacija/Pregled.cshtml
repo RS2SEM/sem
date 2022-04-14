@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ClassLibrary1.ViewModels.RzervacijePregled
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ime</th>
+            <th>prezime</th>
+            <th>broj telefona</th>
+            <th>email</th>
+            <th>datum rezervacije</th>
+            <th>napomena</th>
+            <th>poslovnica</th>
+            <th>broj osoba id</th>
+            <th>termin id</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model.Listt)
+        {
+            <tr>
+                <td>@row.Ime</td>
+                <td>@row.Prezime</td>
+                <td>@row.BrojTelefona</td>
+                <td>@row.Email</td>
+                <td>@row.DatumRezervacije</td>
+                <td>@row.Napomena</td>
+                <td>@row.PoslovnicaID</td>
+                <td>@row.brojOsobaID</td>
+                <td>@row.TerminRezervacijeID</td>
+                
+
+                <td> <a asp-controller="Rezervacija" asp-action="Dodaj" asp-route-id="null">Dodaj</a></td>
+                <td> <a asp-controller="Rezervacija" asp-action="Uredi" asp-route-id="@row.RezervacijaID">Uredi</a></td>
+                <td> <a asp-controller="Rezervacija" asp-action="Izbrisi" asp-route-id="@row.RezervacijaID">Izbrisi</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

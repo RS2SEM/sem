@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\pc\Desktop\rapsudic\deployment</_PublishTargetUrl>
+    <History>True|2022-04-14T07:57:24.1852461Z;True|2022-04-14T09:31:18.7494086+02:00;True|2022-03-28T18:53:08.9249801+02:00;True|2022-03-28T15:23:08.9733688+02:00;True|2022-03-28T13:38:50.1778323+02:00;True|2022-03-28T11:51:36.2237318+02:00;True|2022-03-28T11:37:58.1928087+02:00;True|2022-03-28T11:37:23.7242911+02:00;True|2022-03-24T18:08:50.7419835+01:00;True|2022-03-24T13:00:13.1495222+01:00;True|2022-03-24T12:51:46.5705694+01:00;</History>
+  </PropertyGroup>
+</Project>

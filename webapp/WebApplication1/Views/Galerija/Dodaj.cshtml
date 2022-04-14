@@ -1,0 +1,78 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model WebApplication1.Models.DodajSliku
+@using ClassLibrary1.ViewModels;
+@using ClassLibrary1.Models;
+
+<div> Dodaj sliku</div>
+
+@using WebApplication1.Helper
+@{
+    User aktivan = Autenfikacija.GetLogiraniKorisnik(Context); }
+
+<form id="slikaForm" asp-controller="Galerija" asp-action="Spasi" method="post" enctype="multipart/form-data">
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Naziv">Naziv slike</label>
+            <input type="text" class="form-control" asp-for="Naziv">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Datum "> Datum postavljanja</label>
+            <input type="date" class="form-control" asp-for="Datum">
+        </div>
+        </div>
+
+
+
+        <div class="form-group">
+                <label>Prikaz odabira</label>
+                <img id="previewImg" style="height: 200px; display: block" src="/uploads/" />
+            </div>
+
+        <div class="row">
+            <div class="form-group">
+                <label>Odaberi  sliku studenta</label>
+                <input class="form-control" asp-for="slikaStudentaNew" accept="image/*" onchange="generisiPreview(this)" />
+            </div>
+        </div>
+        @*<div class="row">
+                <div class="col-md-12 form-group">
+                    <label asp-for="Lokacija">lokacija</label>
+                    <input type="text" class="form-control" asp-for="Lokacija">
+                </div>
+            </div>*@
+
+
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="Spasi" data-save="modal">
+            </div>
+        </div>
+
+</form>
+
+<script>
+
+    function generisiPreview(input) {
+        var file = input.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+
+            reader.onload = function () {
+                $("#previewImg").attr("src", reader.result);
+            }
+
+            reader.readAsDataURL(file);
+        }
+    }
+
+</script>

@@ -1,0 +1,51 @@
+﻿
+@using ClassLibrary1.ViewModels;
+
+@{
+    Layout = "_Layout";
+    var obavijesti= (List<ObavijestVM>)ViewData["obavijestiKljuc"];
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
+
+
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 text-center mb-5 ftco-animate">
+                <h2 class="display-4">Nosti i događaji</h2>
+                
+            </div>
+            @foreach (var obavijest in obavijesti)
+            {
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="media d-block mb-4 text-center ftco-media ftco-animate">
+                        <img src="/images/@obavijest.nazivSlike" alt="Free Template by Free-Template.co" class="img-fluid">
+                        <div class="media-body p-md-5 p-4">
+                            <h5 class="mt-0 h4">@obavijest.NazivObavijesti</h5>
+                            <p class="mb-4">@obavijest.SadrZajObavijesti</p>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

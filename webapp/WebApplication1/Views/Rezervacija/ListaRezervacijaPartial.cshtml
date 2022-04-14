@@ -1,0 +1,58 @@
+﻿
+@using ClassLibrary1.ViewModels;
+@using ClassLibrary1.Models;
+@using WebApplication1.Helper
+@{ var rezervacije = (List<RezervacijaPrikazVM>)ViewData["aktivneRezervacije"];
+    User aktivan = Autenfikacija.GetLogiraniKorisnik(Context); }
+
+@model ClassLibrary1.ViewModels.RezervacijaVM
+
+@{ if (rezervacije.Count() == 0)
+    {
+<div class="alert alert-light col-12" role="alert">
+    Hvala Vam na rezervaciji
+    <a asp-controller="Rezervacija" asp-action="Dodaj" asp-route-id="null">Dodaj</a>
+</div> }
+else
+{
+<table class="table table-bordered col-12 text-center">
+    <thead class="thead-light  text-center">
+        <tr>
+
+            <th scope="col" class="text-center">Lokacija</th>
+            <th scope="col" class="text-center">Datum</th>
+            <th scope="col" class="text-center">Termin</th>
+            <th scope="col" class="text-center">Broj osoba</th>
+            <th scope="col" class="text-center">Poništavanje </th>
+            <th scope="col" class="text-center">Akcija </th>
+
+            @*<th>
+            <a asp-controller="Rezervacija" asp-action="Uredi" asp-route-id="@Model.RezervacijaId">Uredi</a>
+        </th>*@
+        </tr>
+    </thead>
+
+    <tbody>
+
+
+
+
+
+        @foreach (var x in rezervacije)
+        {
+            <tr>
+
+                <td>@x.Lokacija</td>
+                <td>@x.Datum</td>
+                <td>@x.Termin</td>
+                <td>@x.BrojOsoba</td>
+                <td><a href="/Rezervacija/PonistiRezervaciju?rezervacijaID=@x.RezervacijaID&userID=@aktivan.UserID" ajax-poziv="da" ajax-rezultat="rezervacijePlaceholder" style="color:orangered">Poništi</a></td>
+
+            </tr>
+         }
+
+
+    </tbody>
+
+</table> } }
+

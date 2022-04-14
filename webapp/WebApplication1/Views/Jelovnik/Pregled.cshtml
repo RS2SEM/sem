@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model ClassLibrary1.ViewModels.JelovnikPregled
+
+    <form asp-controller="Jelovnik" asp-action="Pregled">
+        <p>
+            Pretražite jela: <input type="text" name="q" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Naziv</th>
+                <th>Opis</th>
+                <th>Cijena</th>
+                <th>Akcija</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var row in Model.Listt)
+            {
+                <tr>
+                    <td>@row.nazivProizvoda</td>
+                    <td>@row.opisProizvoda</td>
+                    <td>@row.cijenaProizvoda</td>
+
+                    <td> <a asp-controller="Jelovnik" asp-action="Dodaj" asp-route-id="null">Dodaj</a></td>
+                    <td> <a asp-controller="Jelovnik" asp-action="Uredi" asp-route-id="@row.ProizvodID">Uredi</a></td>
+                    <td> <a asp-controller="Jelovnik" asp-action="Izbrisi" asp-route-id="@row.ProizvodID">Izbrisi</a></td>
+                    <td>
+                        <a asp-controller="ReportController1" asp-action="Index">Izvjestaj pdf</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

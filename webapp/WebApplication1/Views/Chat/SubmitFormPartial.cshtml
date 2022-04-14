@@ -1,0 +1,103 @@
+﻿@model ClassLibrary1.ViewModels.PorukaVM
+
+@{
+
+    var brOsoblja = TempData["brAktivnihDjelatnika"];
+
+
+}
+
+
+@{ if (brOsoblja != null)
+    {
+        <div class="alert alert-light text-center" role="alert">
+            Ispričavamo se na neugodnosti! Korisnička podrška trenutno nije dostupna. Javite nam se na <a href="Kontakt/Email" class="alert-link">mail</a>
+            kako bi stupili u kontakt u što bržem roku.
+        </div>
+
+
+
+    }
+    else
+    {
+
+        <form id="porukaForma" asp-action="PosaljiPoruku" ajax-poziv="da" forma-id="porukaForma" ajax-rezultat="msgbtnDiv" >
+            <div class="input-group">
+                <input type="text" class="form-control input-sm chat_set_height" asp-for="Poruka" />
+
+                <span class="input-group-btn">
+                    <button type="submit" class="btn bt_bg btn-lg">
+                        Pošalji
+                    </button>
+
+
+                </span>
+
+
+            </div>
+        </form>
+
+
+
+    }
+
+
+}
+
+<script src="~/js/Validacija/poruka.js"></script>
+@*<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script>
+    var forma = $("#porukaForma");
+
+    forma.submit(function (event) {
+
+        event.preventDefault();
+
+        if (!forma.valid()) {
+            console.log("nije validna");
+            return false;
+         }
+
+    });
+    
+
+</script>*@
+
+@*<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>*@
+
+
+
+@*<script>
+
+    $(function () {
+
+
+        
+        $("#porukaForma").validate(
+            {
+                rules: {
+
+
+
+                    Poruka: {
+
+                        required: true,
+                        maxlength: 256,
+                        minlength: 3
+                    }
+                },
+                messages: {
+
+
+                    Poruka: {
+                        required: "Unos je obavezan.",
+                        maxlength: "Unjeli ste maximalan broj karaktera.",
+                        minlength: "Morate unjeti minimalno 3 karaktera. "
+                    }
+
+                }
+            });
+    });
+    
+
+</script>*@

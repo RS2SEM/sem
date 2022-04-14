@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model WebApplication1.Models.DodajKomn
+
+
+<div> Dodaj Komentar</div>
+
+<form id="obavjestForm" asp-controller="Komentar" asp-action="Spasi" method="post">
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="Sadrzaj">Sadrzaj</label>
+            <input type="text" class="form-control" asp-for="Sadrzaj">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="VrijemePostavljanja">Datum postavljanja komentara</label>
+            <input type="date" class="form-control" asp-for="VrijemePostavljanja">
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <input type="submit" class="btn btn-primary btn-lg btn-block" value="Spasi" data-save="modal">
+        </div>
+    </div>
+
+</form>
